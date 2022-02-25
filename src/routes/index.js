@@ -1,18 +1,24 @@
-import  { BrowserRouter as Router, useRoutes } from 'react-router-dom';
-import routesConfig from './routeConfig';
+import Layout from '../pages/layout';
+import Home from '../pages/home';
+import About from '../pages/about';
 
-function GetRoutes() {
-  const element = useRoutes(routesConfig);
-  return element
-}
-
-
-const RoutesView = () => {
-    return (
-      <Router>
-        <GetRoutes />
-      </Router>
-    );
-  };
+const routes = [
+  {
+    path: '/',
+    element: <Layout />,
+    children: [
+      {
+        path: '',
+        name: '首页',
+        element: <Home />,
+      }, {
+        path: 'about',
+        name: '详情页',
+        element: <About/>
+      }
+    ]
+  }
   
-  export default RoutesView;
+];
+
+export default routes

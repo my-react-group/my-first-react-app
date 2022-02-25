@@ -1,6 +1,7 @@
-/* .App {
+.appWrap {
   display: flex;
+  height: 100vh;
 }
 .render-wrap{
   flex: 1;
-} */
+}
