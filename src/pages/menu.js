@@ -11,7 +11,7 @@ const { SubMenu } = Menu;
 export default function MenuMy() {
     const navigate = useNavigate();
     const  HandleClick = (path) => {
-        navigate(path);
+        navigate(path, {replace: true}); //加replace 无法回退
     };
 
     return (
